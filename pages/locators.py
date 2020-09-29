@@ -11,4 +11,4 @@ class LoginPageLocators:
     REG_CONFIRM_PASSWORD_FIELD = (By.CSS_SELECTOR, "#id_registration-password2")
 
     LOGIN_EMAIL_FIELD = (By.CSS_SELECTOR, "#id_login-username")
-    LOGIN_PASSWORD_FIELD = (By.CSS_SELECTOR,"#id_login-password")
+    LOGIN_PASSWORD_FIELD = (By.CSS_SELECTOR, "#id_login-password")
