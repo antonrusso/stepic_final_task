@@ -12,6 +12,10 @@ class ProductPage(BasePage):
         assert self.is_element_present(*ProductPageLocators.ADD_TO_BASKET_BUTTON), "Add to basket button not displayed"
 
     def compare_price_in_basket_and_product_price(self):
-        product_price = self.is_element_present(*ProductPageLocators.PRODUCT_PRICE)
-        price_in_basket = self.is_element_present(*ProductPageLocators.PRICE_IN_BASKET)
-        assert product_price == price_in_basket, "Product price and price in basket are different"
+        product_price = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE)
+        price_in_basket = self.browser.find_element(*ProductPageLocators.PRICE_IN_BASKET)
+
+        assert product_price.text == price_in_basket.text, \
+            f"Product price {product_price.text} and price in basket{price_in_basket.text} are different"
+
+
