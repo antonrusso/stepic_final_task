@@ -18,4 +18,10 @@ class ProductPage(BasePage):
         assert product_price.text == price_in_basket.text, \
             f"Product price {product_price.text} and price in basket{price_in_basket.text} are different"
 
+    def compare_product_name_with_ordered_product_name(self):
+        prod_name = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME)
+        ordered_prod_name = self.browser.find_element(*ProductPageLocators.ORDERED_PRODUCT_NAME)
+        assert prod_name.text in ordered_prod_name.text, f"product name - {prod_name} and ordered product name {ordered_prod_name}"
+
+
 
