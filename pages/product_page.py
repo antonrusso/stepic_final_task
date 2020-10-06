@@ -21,7 +21,7 @@ class ProductPage(BasePage):
     def compare_product_name_with_ordered_product_name(self):
         prod_name = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME)
         ordered_prod_name = self.browser.find_element(*ProductPageLocators.ORDERED_PRODUCT_NAME)
-        assert prod_name.text in ordered_prod_name.text, f"product name - {prod_name} and ordered product name {ordered_prod_name}"
+        assert prod_name.text == ordered_prod_name.text, f"product name - {prod_name.text} and ordered product name {ordered_prod_name.text}"
 
 
 
